@@ -9,6 +9,9 @@ void die(const char *s)
 }
 
 typedef uint8_t u8;
+typedef u8 bool;
+#define true 1
+#define false 0
 typedef uint32_t u32;
 #define SCREEN_W 800
 #define SCREEN_H 400
@@ -30,7 +33,8 @@ int main(int argc, char *argv[])
     SDL_Window *win = SDL_CreateWindow("BOB", 100, 200, SCREEN_W, SCREEN_H, SDL_WINDOW_BORDERLESS);
     if (win == NULL) die(SDL_GetError());
 
-    SDL_Renderer *ren = SDL_CreateRenderer(win, -1, 0);
+    SDL_RendererFlags ren_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
+    SDL_Renderer *ren = SDL_CreateRenderer(win, -1, ren_flags);
     if (ren == NULL) die(SDL_GetError());
 
     SDL_Texture *tex = SDL_CreateTexture(ren,
@@ -68,11 +72,30 @@ int main(int argc, char *argv[])
     // TODO: Doc says this is slow, for textures that do not change often.
     if (SDL_UpdateTexture(tex, NULL, rawpix, PITCH) < 0) die(SDL_GetError());
 
-    SDL_RenderClear(ren);
-    SDL_RenderCopy(ren, tex, NULL, NULL);
-    SDL_RenderPresent(ren);
+    bool quit = false;
+    while (!quit)
+    {
+        // Look for quit
+        SDL_Event ui;
+        while (SDL_PollEvent(&ui))
+        {
+            { // ---< Keyboard Input >---
 
-    SDL_Delay(1000);
+                SDL_Keycode sdlk_key = ui.key.keysym.sym;
+                switch(sdlk_key)
+                {
+                    case SDLK_q: quit=true; break;
+                    default: break;
+                }
+            }
+        }
+        
+        // Draw textures to back buffer
+        SDL_RenderClear(ren);
+        SDL_RenderCopy(ren, tex, NULL, NULL);
+        // Swap back buffer with front buffer
+        SDL_RenderPresent(ren);
+    }
 
     /* =====[ CLEANUP ]===== */
     printf("Ran OK");
