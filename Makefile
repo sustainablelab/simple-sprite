@@ -1,11 +1,17 @@
 EXE = main
-CFLAGS = `pkg-config --cflags sdl2`
-CFLAGS += -Wall -Wextra -pedantic -std=c99
-LIBS = `pkg-config --libs sdl2`
+CFLAGS = -Wall -Wextra -pedantic -std=c99
+CFLAGS_SDL = `pkg-config --cflags sdl2`
+LIBS_SDL = `pkg-config --libs sdl2`
 
 
 $(EXE): $(EXE).c
-	$(CC) $(EXE).c -o $(EXE) $(CFLAGS) $(LIBS)
+	$(CC) $(EXE).c -o $(EXE) $(CFLAGS) $(CFLAGS_SDL) $(LIBS_SDL)
+
+parse: parse.c
+	$(CC) $< -o $@ $(CFLAGS)
+
+read-file: read-file.c
+	$(CC) $< -o $@ $(CLFAGS)
 
 .PHONY: tags
 tags:
