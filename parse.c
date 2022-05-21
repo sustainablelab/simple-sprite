@@ -2,17 +2,18 @@
 
 #define MAXLEN 10000
 
-typedef struct
-{
-    char *c;
-    char txt[MAXLEN];
-    char *end;
-} str;
-
 typedef int bool;
 #define false 0
 #define true 1
 
+// #class
+typedef struct
+{ // str
+    char *c;
+    char txt[MAXLEN];
+    char *end;
+} str;
+// #method
 void str_ReadFile(str *src, const char * filename)
 { // Read plaintext file into src->txt.
     // Make sure string exists.
@@ -41,6 +42,7 @@ void str_ReadFile(str *src, const char * filename)
     printf("%s has %d lines\n", filename, nl);
     printf("%s has %d chars\n", filename, nc);
 }
+// #method
 void str_Print(str *s)
 { // Print str->txt to stdout.
     // Make sure string is initialized.
@@ -55,6 +57,7 @@ void str_Print(str *s)
     // Reset string.
     s->c = s->txt;
 }
+
 void get_comments_from_src(str *cmt, str *src)
 { // Write to cmt->txt with comments from src->txt.
     // Make sure `cmt` and `src` exist.
@@ -112,16 +115,54 @@ void get_comments_from_src(str *cmt, str *src)
     cmt->c = cmt->txt;
     src->c = src->txt;
 }
+void get_tags_from_comments(str *tags, str *cmt)
+{
+    if ((tags == NULL) || (cmt == NULL)) {printf("ERR: get_tags_from_comments"); return;}
+    if (cmt->end == NULL) {printf("ERR: get_tags_from_comments"); return;}
+    cmt->c = cmt->txt;
+    tags->c = tags->txt;
+    bool is_tag = false;
+    while (cmt->c != cmt->end)
+    {
+        // Find a tag.
+        if (*cmt->c == '#')
+        {
+            is_tag = true;
+        }
+        // Whitespace marks the end of the tag.
+        if ((*cmt->c == ' ') || (*cmt->c == '\n') || (*cmt->c == '\t'))
+        {
+            is_tag = false;
+        }
+        // Save tags->
+        if (is_tag)
+        {
+            *tags->c = *cmt->c;
+        }
+        cmt->c++;
+        tags->c++;
+    }
+    cmt->c = cmt->txt;
+    tags->end = tags->c;
+    tags->c = tags->txt;
+}
 
 int main()
 { // Get comments in "main.c".
     // Load all of source code "main.c" into a string.
     str src;
-    str_ReadFile(&src, "main.c");
+    /* str_ReadFile(&src, "main.c"); */
+    str_ReadFile(&src, "parse.c");
     // Get the comments from the source code.
     str cmt;
     get_comments_from_src(&cmt, &src);
     // Check I have the comments in memory.
-    str_Print(&cmt);
+    /* str_Print(&cmt); */
+    // Get tags from the comments.
+    str tags;
+    get_tags_from_comments(&tags, &cmt);
+    // Check I have the tags.
+    /* str_Print(&tags); */
+    // Look up each tag in the source file and extract the information.
     return 0;
 }
