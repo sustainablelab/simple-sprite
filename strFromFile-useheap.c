@@ -36,7 +36,7 @@ str* str_FromFile(const char *filename)
 
 int main()
 {
-    const char* filename = "parse-useheap.c";
+    const char* filename = "strFromFile-useheap.c";
     str *Src = str_FromFile(filename);
     // Print to stdout without printf.
     while (Src->c != Src->end) putchar(*Src->c++);

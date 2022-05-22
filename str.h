@@ -1,3 +1,6 @@
+#ifndef __STR_H__
+#define __STR_H__
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,7 +13,7 @@ typedef struct
 } str;
 // #method
 str* str_New(int nc)
-{ // Return an empty string.
+{ // Return an empty string that can hold up to nc characters.
     str *S = malloc(sizeof(str));
     // Add an extra character to hold '\0'.
     S->txt = malloc((nc+1)*sizeof(char));
@@ -22,7 +25,7 @@ str* str_New(int nc)
 }
 // #method
 void str_Free(str *S)
-{
+{ // Free memory for the str.
     // txt = NULL sets S->txt = 0.
     free(S->txt); S->txt = NULL;
     // I don't do S = NULL. It does not change S.
@@ -35,7 +38,7 @@ long long int str_Len(str *S)
 }
 // #method
 str* str_FromString(const char *string)
-{
+{ // Return a str loaded the contents of string.
     int nc = sizeof(string) - sizeof(char);
     // Create a string to hold that many characters
     str *S = str_New(nc);
@@ -50,7 +53,7 @@ str* str_FromString(const char *string)
 }
 // #method
 str* str_FromFile(const char *filename)
-{ // Return a string loaded with the contents of filename.
+{ // Return a str loaded with the contents of filename.
     FILE *f = fopen(filename, "r");
     // Count number of characters in file.
     int nc=0;
@@ -85,17 +88,5 @@ void str_Print(str *S)
     // Point to beginning of string again.
     S->c = S->txt;
 }
+#endif // __STR_H__
 
-int main()
-{
-    const char* filename = "parse-useheap.c";
-    str *Src = str_FromFile(filename);
-
-    str_Print(Src);
-    str *Bob = str_FromString("hey now");
-    printf("Length of \"%s\" is %lld.\n", Bob->txt, str_Len(Bob));
-    // Exit program
-    str_Free(Src);
-    str_Free(Bob);
-    return 0;
-}
