@@ -1,8 +1,12 @@
 #ifndef __STR_H__
 #define __STR_H__
 
+// C standard library
 #include <stdio.h>
 #include <stdlib.h>
+
+// My library
+#include "bool.h"
 
 // #class
 typedef struct
@@ -10,10 +14,26 @@ typedef struct
     char *c;
     char *end;
     char *txt; // OK for printf: printf("%s", str->txt)
+    bool _valid; // careful: before init _valid is any int, not just 0 or 1
 } str;
 // #method
+bool str_IsValid(str *S)
+{ // Return true only if S was made by str_New()
+    /* *************DOC***************
+     * If S is made by str_New(), _valid is 1 (true).
+     *
+     * If S is made manually (e.g., with malloc())
+     * then _valid is some large positive int.
+     * In that case `_valid` evaluates to true even though S is not valid.
+     * But I want to return 0 (false) if S is not valid.
+     *
+     * That case is the reason this function exists.
+     * *******************************/
+    return true ? (S->_valid == true) : false;
+}
+// #method
 str* str_New(int nc)
-{ // Return an empty string that can hold up to nc characters.
+{ // Return an empty string that can hold up to nc characters plus a '\0'.
     str *S = malloc(sizeof(str));
     // Add an extra character to hold '\0'.
     S->txt = malloc((nc+1)*sizeof(char));
@@ -21,6 +41,8 @@ str* str_New(int nc)
     S->c = S->txt;
     // Set string length to zero.
     S->end = S->c;
+    // Mark this string as valid.
+    S->_valid = true;
     return S;
 }
 // #method
@@ -75,12 +97,23 @@ str* str_FromFile(const char *filename)
 // #method
 void str_Print(str *S)
 {
-    // Check string exists and ends after it starts.
-    if ((S->txt == NULL) || (S->end < S->c))
+    if (str_IsValid(S) == false)
     {
-        printf("ERR: str_Print");
+        fprintf(stderr, "ERR str_Print(): string invalid, use str_New()\n");
         return;
     }
+    // Check string exists.
+    if (S->txt == NULL)
+    {
+        fprintf(stderr, "ERR str_Print(): str.txt = NULL\n");
+        return;
+    }
+    /* // Check string ends after it starts. */
+    /* if (S->end < S->txt) */
+    /* { */
+    /*     fprintf(stderr, "ERR str_Print(): str->end   <   str->txt\n"); */
+    /*     return; */
+    /* } */
     // String is OK to print. Point to beginning of string.
     S->c = S->txt;
     // Print it.
@@ -88,5 +121,5 @@ void str_Print(str *S)
     // Point to beginning of string again.
     S->c = S->txt;
 }
-#endif // __STR_H__
 
+#endif // __STR_H__

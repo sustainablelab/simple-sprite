@@ -1,15 +1,9 @@
+// My library
+#include "bool.h"
 #include "str.h"
+#include "list.h"
 
-typedef struct list
-{
-    str *item;
-    struct list *next;
-} list;
-
-/* *************DOC***************
- * Testing multiline.
- * *******************************/
-list* get_comments(str *S)
+list* get_comments_list(str *S)
 { // Get comments from source code.
     // Return a list of comments.
     list *Comments = NULL;
@@ -54,7 +48,8 @@ list* get_comments(str *S)
                     {
                         // Copy the '*/'
                         *C->c++ = *S->c++;
-                        *C->c++ = *S->c++;
+                        /* *C->c++ = *S->c++; */
+                        *C->c++ = *S->c; // Do not advance in case next char is '\n'
                         is_multiline = false;
                         is_comment = false;
                     }
@@ -90,9 +85,8 @@ list* get_comments(str *S)
                 comment->c = comment->txt;
 
                 /* ---< Insert comment in the list >--- */
-                list *t = malloc(sizeof(list));
+                list *t = list_New();
                 t->item = comment;
-                t->next = NULL;
                 if (is_head)
                 {
                     Comments = t;
@@ -104,9 +98,6 @@ list* get_comments(str *S)
                     current->next = t;
                     current = t;
                 }
-                // TEMPORARY CODE
-                /* head = malloc(sizeof(list)); */
-                /* head->item = comment; */
             }
         }
         // STATE: outside a comment.
@@ -123,9 +114,12 @@ list* get_comments(str *S)
     str_Free(C);
     return Comments;
 }
-str* old_but_good_get_comments_str(str *S)
+str* get_comments_str(str *S)
 {
-    // Return a string of all comments.
+    // Return a single string with all comments.
+    str *Comments = NULL;
+
+    // Make a temporary buffer for comment strings.
     str *C = str_New(str_Len(S));
 
     bool is_comment = false;
@@ -163,7 +157,8 @@ str* old_but_good_get_comments_str(str *S)
                     {
                         // Copy the '*/'
                         *C->c++ = *S->c++;
-                        *C->c++ = *S->c++;
+                        /* *C->c++ = *S->c++; */
+                        *C->c++ = *S->c; // Do not advance in case next char is '\n'
                         is_multiline = false;
                         is_comment = false;
                     }
@@ -182,156 +177,68 @@ str* old_but_good_get_comments_str(str *S)
         // Get next character.
         else S->c++;
     }
-    C->end = C->c;
-    C->c = C->txt;
-    return C;
-}
-list* old_get_comments(str *S)
-{ // Get comments from source code.
-    // Return a list of comments.
-    list *Comments = malloc(sizeof(list));
-    // Create temp buffer for worst case that Src is one giant comment.
-    str *Tmp = str_New(str_Len(S));
-    printf("Src: %lld\n", str_Len(S)); // DEBUG
-    printf("Tmp: %lld\n", str_Len(Tmp)); // DEBUG
-    // Find a comment.
-    // When the comment ends, copy it to its own string.
-    // Reuse Tmp for the next comment.
-    //
-    bool is_comment = false;
-    bool is_multiline = false;
-    while (S->c <= S->end)
-    {
-        // STATE: not inside a comment.
-        if (!is_comment)
-        {
-            // Look ahead two characters for `//` or `/*`.
-            char c0 = *S->c;
-            char c1 = *(S->c + 1);
-            if ( (c0=='/') && ((c1=='/') || (c1=='*')) )
-            {
-                is_comment = true;
-                // is this a multiline comment `/*`
-                if (c1 == '*') is_multiline = true;
-            }
-        }
-        // STATE: inside a comment
-        if (is_comment)
-        {
-            // Copy characters until a line break or until multiline ends.
-            while ((*S->c != '\n') && (is_comment))
-            {
-                // Handle case that next two chars are `*/`.
-                if (is_multiline)
-                {
-                    // Look ahead two characters for `*/`.
-                    char c0 = *S->c;
-                    char c1 = *(S->c + 1);
-                    // is this the end of the multiline comment
-                    if ( (c0=='*') && (c1=='/') )
-                    {
-                        is_comment = false;
-                        is_multiline = false;
-                        // Copy the `*/`
-                        /* putchar(*S->c); */
-                        *Tmp->c++ = *S->c++;
-                        /* putchar(*S->c); */
-                        *Tmp->c++ = *S->c++;
-                        break;
-                    }
-                }
-                // Copy the character.
-                /* putchar(*S->c); */
-                *Tmp->c++ = *S->c++;
-            }
-            // Copy the line break
-            *Tmp->c = *S->c;
-            /* putchar(*S->c); */
-            // If this is not a multiline comment, the comment is over.
-            if (!is_multiline) is_comment = false;
-        }
-        // whatever state it is, advance to next character.
-        /* S->c++; */
-    }
-    // Set end of comment string.
-    Tmp->end = Tmp->c;
-    printf("Tmp->c: %p\n", (void*)Tmp->c); // DEBUG
-    printf("Tmp->end: %p\n", (void*)Tmp->end); // DEBUG
-    // Rewind comment and source strings.
-    Tmp->c = Tmp->txt;
-    str_Print(Tmp); // DEBUG
+    // Rewind source string.
     S->c = S->txt;
-    printf("Src: %lld\n", str_Len(S)); // DEBUG
-    printf("Tmp: %lld\n", str_Len(Tmp)); // DEBUG
-    str_Free(Tmp);
+    /* ---< Copy to new string sized correctly. >--- */
+    // Store location where string ends in temp buffer.
+    C->end = C->c;
+    // Rewind temp buffer.
+    C->c = C->txt;
+    // Copy to a single string with the correct size.
+    Comments = str_New(str_Len(C));
+    while (C->c < C->end) *Comments->c++ = *C->c++;
+    // Store location where string ends.
+    Comments->end = Comments->c;
+    // Insert '\0' at end of string.
+    *Comments->end = '\0';
+    // Rewind string.
+    Comments->c = Comments->txt;
+    // Done with the giant comment buffer.
+    str_Free(C);
     return Comments;
 }
 
 int main()
 {
+    /* =====[ Setup ]===== */
     // Load source code into one giant string.
-    const char *filename = "parse.c";
+    const char *filename = "test-comments.c";
     str *Src = str_FromFile(filename);
-    // Extract the comments as a list of strings.
-    list *Comments = get_comments(Src);
-    /* str *Comments = get_comments_str(Src); */
-    /* str_Print(Comments); */
 
-    { // Count number of comments
-        list *t = Comments;
-        int nc = 0;
-        while(1)
-        {
-            nc++;
-            if (t->next == NULL) break;
-            t = t->next;
-        }
-        printf("There are %d comments.\n", nc);
+    if (false)
+    /* =====[ Examples ]===== */
+    { puts("--- Example: get_comments_str() ---");
+        str *Comments = get_comments_str(Src);
+        str_Print(Comments);
+        // Cleanup
+        str_Free(Comments);
     }
-    /* { // Print each comment. */
-    /*     list *Comment = Comments; */
-    /*     while(1) */
-    /*     { */
-    /*         str_Print(Comment->item); */
-    /*         if (Comment->next == NULL) break; */
-    /*         Comment = Comment->next; */
-    /*     } */
-    /* } */
-    { // Print first and last comment.
-        list *t = Comments;
-        str_Print(t->item);
-        while(1)
-        {
-            if (t->next == NULL) break;
-            t = t->next;
+
+    if (true)
+    { puts("--- Example: get_comments_list() ---");
+        list *Comments = get_comments_list(Src);
+
+        if (false)
+        { puts("Count number of comments.");
+            printf("There are %d comments.\n", list_Len(Comments));
         }
-        str_Print(t->item);
+
+        if (false)
+        { puts("Print each comment.");
+            list_Print(Comments);
+        }
+
+        if (true)
+        { puts("Print first N and last M comments.");
+            list_PrintHeadTail(Comments, 2, 2);
+        }
+
+        // Cleanup
+        list_Free(Comments);
     }
 
     // Exit program
-    // TODO: #define the types to check for to know what free to call, include int type in list typedef.
-    //
-    // Free each link and its comment.
-    list *Comment = Comments;
-    while(1)
-    {
-        // Free the str
-        str_Free(Comment->item);
-        // if last item
-        if (Comment->next == NULL)
-        {
-            // free it
-            free(Comment);
-            break;
-        }
-        // not last item
-        list *t = Comment;
-        // get next item
-        Comment = Comment->next;
-        // free this item
-        free(t);
-    }
-
+    
     str_Free(Src);
     return 0;
 }
