@@ -156,7 +156,7 @@ int count_lines(const char *filename)
 
 int main()
 { // Get comments in C source file.
-    const char *filename = "parse-varlen.c";
+    const char *filename = "parse-usestack.c";
     // Load all C source code into a string.
     str Src;
     // Get file size for memory allocation.

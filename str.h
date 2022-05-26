@@ -46,12 +46,12 @@ str* str_New(int nc)
     return S;
 }
 // #method
-void str_Free(str *S)
-{ // Free memory for the str.
-    // txt = NULL sets S->txt = 0.
-    free(S->txt); S->txt = NULL;
-    // I don't do S = NULL. It does not change S.
-    free(S);
+void str_Free(str **S)
+{ // Free memory for the str. Take &S. Set S->txt = NULL and S = NULL.
+    free((*S)->txt);
+    (*S)->txt = NULL;
+    free(*S);
+    (*S) = NULL;
 }
 // #method
 long long int str_Len(str *S)

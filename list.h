@@ -17,7 +17,7 @@ typedef struct list
     struct list *next;
 } list;
 // #method
-void list_Free(list *ListStr)
+void list_Free(list *ListStr) // TODO: make this **ListStr
 { // Free each link and its comment.
 
     /* *************DOC***************
@@ -29,7 +29,7 @@ void list_Free(list *ListStr)
     while(1)
     {
         // Free the str
-        str_Free(ListStr->item);
+        str_Free(&(ListStr->item));
         // if last item
         if (ListStr->next == NULL)
         {
