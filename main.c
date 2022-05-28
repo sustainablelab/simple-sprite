@@ -19,30 +19,10 @@ typedef uint32_t u32;
 
 u32 rawpix[SCREEN_W*SCREEN_H*sizeof(u32)];
 
-int main(int argc, char *argv[])
-{
-    /* =====[ SETUP ]===== */
-    for (int i=0; i<argc; i++)
-    {
-        printf("arg %d: %s\n", i, argv[i]);
-    }
-
-    if (SDL_InitSubSystem(SDL_INIT_VIDEO) < 0) die(SDL_GetError());
-
-                                           //  x    y    w         h        flags
-    SDL_Window *win = SDL_CreateWindow("BOB", 100, 200, SCREEN_W, SCREEN_H, SDL_WINDOW_BORDERLESS);
-    if (win == NULL) die(SDL_GetError());
-
-    SDL_RendererFlags ren_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
-    SDL_Renderer *ren = SDL_CreateRenderer(win, -1, ren_flags);
-    if (ren == NULL) die(SDL_GetError());
-
-    SDL_Texture *tex = SDL_CreateTexture(ren,
-            SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, SCREEN_W, SCREEN_H);
-    if (tex == NULL) die(SDL_GetError());
-
-    /* =====[ GAME ]===== */
-
+// #Data
+int Data_hstart = 3; // Initial game data value.
+void Data_Update(void)
+{ // Update game data after a file reload.
     { // Fill the window with a beautiful complex sunset gradient
         for (u32 m=0; m < SCREEN_H; m++) {
             for (u32 n=0; n < SCREEN_W; n++) {
@@ -59,7 +39,7 @@ int main(int argc, char *argv[])
                     u32 vstart = 2*SCREEN_H; // start red beyond half-brightness
                     r = ((m+vstart)*255/(SCREEN_H+vstart)) << 24;
                     // Scale horizontal green and blue gradients to match screen width
-                    u32 hstart = 3*SCREEN_W; // start green and blue well beyond half-brightness
+                    u32 hstart = Data_hstart*SCREEN_W; // start green and blue well beyond half-brightness
                     g = ((n+hstart)*0xCC/(SCREEN_W+hstart)) << 16;
                     b = ((n+hstart)*0xFF/(SCREEN_W+hstart)) << 8;
                 }
@@ -68,6 +48,57 @@ int main(int argc, char *argv[])
             }
         }
     }
+}
+const char * File_name = "data.txt";
+void File_Reload(void)
+{ // Reload data.txt
+    /* *************DOC***************
+     * Look at first character in data.txt.
+     * Interpret as an integer.
+     * Store this value in Data_hstart.
+     * *******************************/
+    FILE *f;
+    f = fopen(File_name, "r");
+    if (f == NULL) { printf("Cannot find \"%s\"\n", File_name); fflush(stdout); return; }
+    fscanf(f, "%d", &Data_hstart);
+    printf("Reload game data: new Data_hstart is %d.\n", Data_hstart); fflush(stdout);
+    fclose(f);
+}
+
+int main(int argc, char *argv[])
+{
+    /* =====[ SETUP ]===== */
+    int i=0;
+    for (i=0; i<argc; i++)
+    {
+        printf("arg %d: %s\n", i, argv[i]);
+    }
+    int Window_x = (i>1) ? atoi(argv[1]) : 0;
+    int Window_y = (i>2) ? atoi(argv[2]) : 0;
+    int Window_w = (i>3) ? atoi(argv[3]) : SCREEN_W;
+    int Window_h = (i>4) ? atoi(argv[4]) : SCREEN_H;
+
+    if (SDL_InitSubSystem(SDL_INIT_VIDEO) < 0) die(SDL_GetError());
+
+    SDL_WindowFlags win_flags = SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP;
+                                           //  x    y
+    /* SDL_Window *win = SDL_CreateWindow("BOB", Window_x, Window_y, SCREEN_W, SCREEN_H, win_flags); */
+    SDL_Window *win = SDL_CreateWindow("BOB", Window_x, Window_y, Window_w, Window_h, win_flags);
+    if (win == NULL) die(SDL_GetError());
+
+    SDL_RendererFlags ren_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
+    SDL_Renderer *ren = SDL_CreateRenderer(win, -1, ren_flags);
+    if (ren == NULL) die(SDL_GetError());
+
+    SDL_Texture *tex = SDL_CreateTexture(ren,
+            /* SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, SCREEN_W, SCREEN_H); */
+            SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, Window_w, Window_h);
+    if (tex == NULL) die(SDL_GetError());
+
+    /* =====[ GAME ]===== */
+
+    // Initial data load.
+    Data_Update();
 
     // TODO: Doc says this is slow, for textures that do not change often.
     if (SDL_UpdateTexture(tex, NULL, rawpix, PITCH) < 0) die(SDL_GetError());
@@ -80,16 +111,23 @@ int main(int argc, char *argv[])
         while (SDL_PollEvent(&ui))
         {
             { // ---< Keyboard Input >---
-
-                SDL_Keycode sdlk_key = ui.key.keysym.sym;
-                switch(sdlk_key)
+                if (ui.type == SDL_KEYDOWN)
                 {
-                    case SDLK_q: quit=true; break;
-                    default: break;
+                    SDL_Keycode sdlk_key = ui.key.keysym.sym;
+                    switch(sdlk_key)
+                    {
+                        case SDLK_q: quit=true; break;
+                        case SDLK_SPACE:
+                             File_Reload();
+                             Data_Update();
+                             if (SDL_UpdateTexture(tex, NULL, rawpix, PITCH) < 0) die(SDL_GetError());
+                             break;
+                        default: break;
+                    }
                 }
             }
         }
-        
+
         // Draw textures to back buffer
         SDL_RenderClear(ren);
         SDL_RenderCopy(ren, tex, NULL, NULL);

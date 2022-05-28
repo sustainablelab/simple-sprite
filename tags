@@ -9,5 +9,491 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210711.0/
-i	main.c	/^    for (int i=0; i<argc; i++)$/;"	l	function:main	typeref:typename:int	file:
+Bad	test-str.c	/^            str *Bad = malloc(sizeof(str));$/;"	l	function:main	typeref:typename:str *	file:
+Bob	test-str.c	/^        str *Bob = str_FromString("hey now");$/;"	l	function:main	typeref:typename:str *	file:
+C	comments.h	/^    str *C = str_New(str_Len(S));$/;"	l	function:get_comments_list	typeref:typename:str *	file:
+C	comments.h	/^    str *C = str_New(str_Len(S));$/;"	l	function:get_comments_str	typeref:typename:str *	file:
+Cmt	parse-usestack.c	/^    str Cmt;$/;"	l	function:main	typeref:typename:str	file:
+Cmt_txt	parse-usestack.c	/^    char Cmt_txt[Cmt.len];$/;"	l	function:main	typeref:typename:char[]	file:
+Comments	comments.h	/^    list *Comments = NULL;$/;"	l	function:get_comments_list	typeref:typename:list *	file:
+Comments	comments.h	/^    str *Comments = NULL;$/;"	l	function:get_comments_str	typeref:typename:str *	file:
+Comments	test-comments.c	/^        list *Comments = get_comments_list(Src);$/;"	l	function:main	typeref:typename:list *	file:
+Comments	test-comments.c	/^        str *Comments = get_comments_str(Src);$/;"	l	function:main	typeref:typename:str *	file:
+DMON_ACTION_CREATE	dmon.h	/^    DMON_ACTION_CREATE = 1,$/;"	e	enum:dmon_action_t
+DMON_ACTION_DELETE	dmon.h	/^    DMON_ACTION_DELETE,$/;"	e	enum:dmon_action_t
+DMON_ACTION_MODIFY	dmon.h	/^    DMON_ACTION_MODIFY,$/;"	e	enum:dmon_action_t
+DMON_ACTION_MOVE	dmon.h	/^    DMON_ACTION_MOVE$/;"	e	enum:dmon_action_t
+DMON_API_DECL	dmon.h	/^#   define DMON_API_DECL$/;"	d
+DMON_API_IMPL	dmon.h	/^#   define DMON_API_IMPL$/;"	d
+DMON_ASSERT	dmon.h	/^#   define DMON_ASSERT(/;"	d
+DMON_FREE	dmon.h	/^#   define DMON_FREE(/;"	d
+DMON_LOG_DEBUG	dmon.h	/^#       define DMON_LOG_DEBUG(/;"	d
+DMON_LOG_ERROR	dmon.h	/^#   define DMON_LOG_ERROR(/;"	d
+DMON_MALLOC	dmon.h	/^#   define DMON_MALLOC(/;"	d
+DMON_MAX_PATH	dmon.h	/^#   define DMON_MAX_PATH /;"	d
+DMON_MAX_WATCHES	dmon.h	/^#   define DMON_MAX_WATCHES /;"	d
+DMON_OS	dmon.h	/^#    define DMON_OS /;"	d
+DMON_OS_LINUX	dmon.h	/^#    define DMON_OS_LINUX /;"	d
+DMON_OS_LINUX	dmon.h	/^#define DMON_OS_LINUX /;"	d
+DMON_OS_MACOS	dmon.h	/^#    define DMON_OS_MACOS /;"	d
+DMON_OS_MACOS	dmon.h	/^#define DMON_OS_MACOS /;"	d
+DMON_OS_WINDOWS	dmon.h	/^#    define DMON_OS_WINDOWS /;"	d
+DMON_OS_WINDOWS	dmon.h	/^#define DMON_OS_WINDOWS /;"	d
+DMON_REALLOC	dmon.h	/^#   define DMON_REALLOC(/;"	d
+DMON_WATCHFLAGS_FOLLOW_SYMLINKS	dmon.h	/^    DMON_WATCHFLAGS_FOLLOW_SYMLINKS = 0x2,      \/\/ resolve symlinks (linux only)$/;"	e	enum:dmon_watch_flags_t
+DMON_WATCHFLAGS_IGNORE_DIRECTORIES	dmon.h	/^    DMON_WATCHFLAGS_IGNORE_DIRECTORIES = 0x8    \/\/ TODO: not implemented yet$/;"	e	enum:dmon_watch_flags_t
+DMON_WATCHFLAGS_OUTOFSCOPE_LINKS	dmon.h	/^    DMON_WATCHFLAGS_OUTOFSCOPE_LINKS = 0x4,     \/\/ TODO: not implemented yet$/;"	e	enum:dmon_watch_flags_t
+DMON_WATCHFLAGS_RECURSIVE	dmon.h	/^    DMON_WATCHFLAGS_RECURSIVE = 0x1,            \/\/ monitor all child directories$/;"	e	enum:dmon_watch_flags_t
+Data_Update	main.c	/^void Data_Update(void)$/;"	f	typeref:typename:void
+Data_hstart	main.c	/^int Data_hstart = 3; \/\/ Initial game data value.$/;"	v	typeref:typename:int
+FILENAME	read-file.c	/^#define FILENAME /;"	d	file:
+File_Reload	main.c	/^void File_Reload(void)$/;"	f	typeref:typename:void
+File_name	main.c	/^const char * File_name = "data.txt";$/;"	v	typeref:typename:const char *
+Good	test-str.c	/^            str *Good = str_New(3);$/;"	l	function:main	typeref:typename:str *	file:
+L	list.h	/^    list *L = malloc(sizeof(list));$/;"	l	function:list_New	typeref:typename:list *	file:
+MAXLEN	parse-usestatic.c	/^#define MAXLEN /;"	d	file:
+MAX_LINELEN	read-file.c	/^#define MAX_LINELEN /;"	d	file:
+NOMINMAX	dmon.h	/^#        define NOMINMAX$/;"	d
+PITCH	main.c	/^#define PITCH /;"	d	file:
+S	free-ptr.c	/^    String *S = String_New(4);$/;"	l	function:main	typeref:typename:String *	file:
+S	free-ptr.c	/^    String *S = malloc(sizeof(String));$/;"	l	function:String_New	typeref:typename:String *	file:
+S	str.h	/^    str *S = malloc(sizeof(str));$/;"	l	function:str_New	typeref:typename:str *	file:
+S	str.h	/^    str *S = str_New(nc);$/;"	l	function:str_FromFile	typeref:typename:str *	file:
+S	str.h	/^    str *S = str_New(nc);$/;"	l	function:str_FromString	typeref:typename:str *	file:
+S	strFromFile-useheap.c	/^    str *S = malloc(sizeof(str));$/;"	l	function:str_FromFile	typeref:typename:str *	file:
+SCREEN_H	main.c	/^#define SCREEN_H /;"	d	file:
+SCREEN_W	main.c	/^#define SCREEN_W /;"	d	file:
+Src	parse-usestack.c	/^    str Src;$/;"	l	function:main	typeref:typename:str	file:
+Src	strFromFile-useheap.c	/^    str *Src = str_FromFile(filename);$/;"	l	function:main	typeref:typename:str *	file:
+Src	test-comments.c	/^    str *Src = str_FromFile(filename);$/;"	l	function:main	typeref:typename:str *	file:
+Src	test-str.c	/^        str *Src = str_FromFile(filename);$/;"	l	function:main	typeref:typename:str *	file:
+Src_txt	parse-usestack.c	/^    char Src_txt[Src.len];$/;"	l	function:main	typeref:typename:char[]	file:
+String	free-ptr.c	/^} String;$/;"	t	typeref:struct:__anonb7255dbb0108	file:
+String_Free	free-ptr.c	/^void String_Free(String **S)$/;"	f	typeref:typename:void
+String_New	free-ptr.c	/^String* String_New(size_t len)$/;"	f	typeref:typename:String *
+Tags	parse-usestack.c	/^    str Tags;$/;"	l	function:main	typeref:typename:str	file:
+Tags_txt	parse-usestack.c	/^    char Tags_txt[Tags.len];$/;"	l	function:main	typeref:typename:char[]	file:
+WIN32_LEAN_AND_MEAN	dmon.h	/^#        define WIN32_LEAN_AND_MEAN$/;"	d
+Window_h	main.c	/^    int Window_h = (i>4) ? atoi(argv[4]) : SCREEN_H;$/;"	l	function:main	typeref:typename:int	file:
+Window_w	main.c	/^    int Window_w = (i>3) ? atoi(argv[3]) : SCREEN_W;$/;"	l	function:main	typeref:typename:int	file:
+Window_x	main.c	/^    int Window_x = (i>1) ? atoi(argv[1]) : 0;$/;"	l	function:main	typeref:typename:int	file:
+Window_y	main.c	/^    int Window_y = (i>2) ? atoi(argv[2]) : 0;$/;"	l	function:main	typeref:typename:int	file:
+_DMON_LOG_DEBUGF	dmon.h	/^#   define _DMON_LOG_DEBUGF(/;"	d
+_DMON_LOG_ERRORF	dmon.h	/^#   define _DMON_LOG_ERRORF(/;"	d
+_DMON_PRIVATE	dmon.h	/^#       define _DMON_PRIVATE /;"	d
+_DMON_TEMP_BUFFSIZE	dmon.h	/^#define _DMON_TEMP_BUFFSIZE /;"	d
+_DMON_UNUSED	dmon.h	/^#define _DMON_UNUSED(/;"	d
+_DMON_WINAPI_STR	dmon.h	/^#   define _DMON_WINAPI_STR(/;"	d
+__BOOL_H__	bool.h	/^#define __BOOL_H__$/;"	d
+__COMMENTS_H__	comments.h	/^#define __COMMENTS_H__$/;"	d
+__DMON_H__	dmon.h	/^#define __DMON_H__$/;"	d
+__LIST_H__	list.h	/^#define __LIST_H__$/;"	d
+__STR_H__	str.h	/^#define __STR_H__$/;"	d
+__USE_MISC	dmon.h	/^#        define __USE_MISC$/;"	d
+__anon106189540108	str.h	/^{$/;"	s
+__anon3c800cb30108	parse-usestatic.c	/^{ \/\/ str$/;"	s	file:
+__anonb7255dbb0108	free-ptr.c	/^{$/;"	s	file:
+__anoncb7e71c10108	parse-usestack.c	/^{ \/\/ str$/;"	s	file:
+__anoncda170fb0108	strFromFile-useheap.c	/^{$/;"	s	file:
+__anonf9160ae90108	dmon.h	/^typedef struct { uint32_t id; } dmon_watch_id;$/;"	s
+_dmon	dmon.h	/^static dmon__state _dmon;$/;"	v	typeref:typename:dmon__state
+_dmon_init	dmon.h	/^static bool _dmon_init;$/;"	v	typeref:typename:bool
+_max	dmon.h	/^    const int32_t _max = dst_sz - 1;$/;"	l	function:dmon__strcpy	typeref:typename:const int32_t	file:
+_userdata	dmon.h	/^    union dmon__cast_userdata _userdata;$/;"	l	function:dmon__fsevent_callback	typeref:union:dmon__cast_userdata	file:
+_valid	str.h	/^    bool _valid; \/\/ careful: before init _valid is any int, not just 0 or 1$/;"	m	struct:__anon106189540108	typeref:typename:bool
+abs_filepath	dmon.h	/^                char abs_filepath[DMON_MAX_PATH];$/;"	l	function:dmon__fsevent_process_events	typeref:typename:char[]	file:
+abs_filepath	dmon.h	/^    char abs_filepath[DMON_MAX_PATH];$/;"	l	function:dmon__fsevent_callback	typeref:typename:char[]	file:
+abs_filepath_lower	dmon.h	/^    char abs_filepath_lower[DMON_MAX_PATH];$/;"	l	function:dmon__fsevent_callback	typeref:typename:char[]	file:
+action	dmon.h	/^    DWORD action;$/;"	m	struct:dmon__win32_event	typeref:typename:DWORD
+b	main.c	/^                u32 r, g, b;$/;"	l	function:Data_Update	typeref:typename:u32	file:
+buff	dmon.h	/^    static uint8_t buff[_DMON_TEMP_BUFFSIZE];$/;"	l	function:dmon__thread	typeref:typename:uint8_t[]	file:
+buffer	dmon.h	/^    uint8_t buffer[64512]; \/\/ http:\/\/msdn.microsoft.com\/en-us\/library\/windows\/desktop\/a/;"	m	struct:dmon__watch_state	typeref:typename:uint8_t[64512]
+bytes	dmon.h	/^            DWORD bytes;$/;"	l	function:dmon__thread	typeref:typename:DWORD	file:
+c	dmon.h	/^    int i, c;$/;"	l	function:dmon__find_subdir	typeref:typename:int	file:
+c	dmon.h	/^    int i, c;$/;"	l	function:dmon__fsevent_process_events	typeref:typename:int	file:
+c	dmon.h	/^    int i, c;$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+c	dmon.h	/^    int i, c;$/;"	l	function:dmon__win32_process_events	typeref:typename:int	file:
+c	parse-usestack.c	/^    char *c;    \/\/ a char in the string$/;"	m	struct:__anoncb7e71c10108	typeref:typename:char *	file:
+c	parse-usestack.c	/^    char c; \/\/ holds one character from the file$/;"	l	function:str_ReadFile	typeref:typename:char	file:
+c	parse-usestack.c	/^    char c;$/;"	l	function:count_chars	typeref:typename:char	file:
+c	parse-usestack.c	/^    char c;$/;"	l	function:count_lines	typeref:typename:char	file:
+c	parse-usestatic.c	/^    char *c;$/;"	m	struct:__anon3c800cb30108	typeref:typename:char *	file:
+c	parse-usestatic.c	/^    char c; \/\/ holds one character from the file$/;"	l	function:str_ReadFile	typeref:typename:char	file:
+c	printf.c	/^    int c = getc(stdin);$/;"	l	function:main	typeref:typename:int	file:
+c	str.h	/^    char *c;$/;"	m	struct:__anon106189540108	typeref:typename:char *
+c	strFromFile-useheap.c	/^    char *c;$/;"	m	struct:__anoncda170fb0108	typeref:typename:char *	file:
+c	test-array.c	/^    char c;$/;"	l	function:main	typeref:typename:char	file:
+c0	comments.h	/^                    char c0 = *S->c;$/;"	l	function:get_comments_list	typeref:typename:char	file:
+c0	comments.h	/^                    char c0 = *S->c;$/;"	l	function:get_comments_str	typeref:typename:char	file:
+c0	comments.h	/^            char c0 = *S->c;$/;"	l	function:get_comments_list	typeref:typename:char	file:
+c0	comments.h	/^            char c0 = *S->c;$/;"	l	function:get_comments_str	typeref:typename:char	file:
+c0	parse-usestack.c	/^                char c0 = *src->c;$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c0	parse-usestack.c	/^            char c0 = *src->c;$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c0	parse-usestatic.c	/^                char c0 = *src->c;$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c0	parse-usestatic.c	/^            char c0 = *src->c;$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c1	comments.h	/^                    char c1 = *(S->c+1);$/;"	l	function:get_comments_list	typeref:typename:char	file:
+c1	comments.h	/^                    char c1 = *(S->c+1);$/;"	l	function:get_comments_str	typeref:typename:char	file:
+c1	comments.h	/^            char c1 = *(S->c+1);$/;"	l	function:get_comments_list	typeref:typename:char	file:
+c1	comments.h	/^            char c1 = *(S->c+1);$/;"	l	function:get_comments_str	typeref:typename:char	file:
+c1	parse-usestack.c	/^                char c1 = *(src->c + 1);$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c1	parse-usestack.c	/^            char c1 = *(src->c + 1);$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c1	parse-usestatic.c	/^                char c1 = *(src->c + 1);$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+c1	parse-usestatic.c	/^            char c1 = *(src->c + 1);$/;"	l	function:get_comments_from_src	typeref:typename:char	file:
+cf_alloc_ctx	dmon.h	/^    CFAllocatorContext cf_alloc_ctx = { 0 };$/;"	l	function:dmon_init	typeref:typename:CFAllocatorContext	file:
+cf_alloc_ref	dmon.h	/^    CFAllocatorRef cf_alloc_ref;$/;"	m	struct:dmon__state	typeref:typename:CFAllocatorRef
+cf_dir	dmon.h	/^    CFStringRef cf_dir = CFStringCreateWithCString(NULL, watch->rootdir_unmod, kCFStringEncoding/;"	l	function:dmon_watch	typeref:typename:CFStringRef	file:
+cf_dirarr	dmon.h	/^    CFArrayRef cf_dirarr = CFArrayCreate(NULL, (const void**)&cf_dir, 1, NULL);$/;"	l	function:dmon_watch	typeref:typename:CFArrayRef	file:
+cf_loop_ref	dmon.h	/^    CFRunLoopRef cf_loop_ref;$/;"	m	struct:dmon__state	typeref:typename:CFRunLoopRef
+check_ev	dmon.h	/^                dmon__fsevent_event* check_ev = &_dmon.events[j];$/;"	l	function:dmon__fsevent_process_events	typeref:typename:dmon__fsevent_event *	file:
+check_ev	dmon.h	/^                dmon__inotify_event* check_ev = &_dmon.events[j];$/;"	l	function:dmon__inotify_process_events	typeref:typename:dmon__inotify_event *	file:
+check_ev	dmon.h	/^                dmon__win32_event* check_ev = &_dmon.events[j];$/;"	l	function:dmon__win32_process_events	typeref:typename:dmon__win32_event *	file:
+cmt	parse-usestatic.c	/^    str cmt;$/;"	l	function:main	typeref:typename:str	file:
+comment	comments.h	/^                str *comment = str_New(str_Len(C));$/;"	l	function:get_comments_list	typeref:typename:str *	file:
+cookie	dmon.h	/^    uint32_t cookie;$/;"	m	struct:dmon__inotify_event	typeref:typename:uint32_t
+count	dmon.h	/^                    int count = WideCharToMultiByte(CP_UTF8, 0, notify->FileName,$/;"	l	function:dmon__thread	typeref:typename:int	file:
+count_chars	parse-usestack.c	/^int count_chars(const char *filename)$/;"	f	typeref:typename:int
+count_lines	parse-usestack.c	/^int count_lines(const char *filename)$/;"	f	typeref:typename:int
+ctx	dmon.h	/^    FSEventStreamContext ctx;$/;"	l	function:dmon_watch	typeref:typename:FSEventStreamContext	file:
+current	comments.h	/^    list *current;$/;"	l	function:get_comments_list	typeref:typename:list *	file:
+dbl_cur	dmon.h	/^    int dbl_cur = arr ? 2*stb__sbm(arr) : 0;$/;"	l	function:stb__sbgrowf	typeref:typename:int	file:
+demo_1	test-str.c	/^bool demo_1 = false;$/;"	v	typeref:typename:bool
+demo_2	test-str.c	/^bool demo_2 = false;$/;"	v	typeref:typename:bool
+demo_str_Print_errors	test-str.c	/^bool demo_str_Print_errors = true;$/;"	v	typeref:typename:bool
+dev	dmon.h	/^                            dmon__inotify_event dev = { { 0 }, iev->mask, iev->cookie, watch->id/;"	l	function:dmon__thread	typeref:typename:dmon__inotify_event	file:
+dev	dmon.h	/^            dmon__inotify_event dev = { { 0 }, IN_CREATE|(is_dir ? IN_ISDIR : 0), 0, watch->id, /;"	l	function:dmon__gather_recursive	typeref:typename:dmon__inotify_event	file:
+die	main.c	/^void die(const char *s)$/;"	f	typeref:typename:void
+dir	dmon.h	/^    DIR* dir = opendir(dirname);$/;"	l	function:dmon__gather_recursive	typeref:typename:DIR *	file:
+dir	dmon.h	/^    DIR* dir = opendir(dirname);$/;"	l	function:dmon__watch_recursive	typeref:typename:DIR *	file:
+dir_handle	dmon.h	/^    HANDLE dir_handle;$/;"	m	struct:dmon__watch_state	typeref:typename:HANDLE
+dmon__cast_userdata	dmon.h	/^union dmon__cast_userdata {$/;"	u
+dmon__cf_free	dmon.h	/^_DMON_PRIVATE void dmon__cf_free(void* ptr, void* info)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__cf_malloc	dmon.h	/^_DMON_PRIVATE void* dmon__cf_malloc(CFIndex size, CFOptionFlags hints, void* info)$/;"	f	typeref:typename:_DMON_PRIVATE void *
+dmon__cf_realloc	dmon.h	/^_DMON_PRIVATE void* dmon__cf_realloc(void* ptr, CFIndex newsize, CFOptionFlags hints, void* info/;"	f	typeref:typename:_DMON_PRIVATE void *
+dmon__find_subdir	dmon.h	/^_DMON_PRIVATE const char* dmon__find_subdir(const dmon__watch_state* watch, int wd)$/;"	f	typeref:typename:_DMON_PRIVATE const char *
+dmon__fsevent_callback	dmon.h	/^_DMON_PRIVATE void dmon__fsevent_callback(ConstFSEventStreamRef stream_ref, void* user_data,$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__fsevent_event	dmon.h	/^typedef struct dmon__fsevent_event {$/;"	s
+dmon__fsevent_event	dmon.h	/^} dmon__fsevent_event;$/;"	t	typeref:struct:dmon__fsevent_event
+dmon__fsevent_process_events	dmon.h	/^_DMON_PRIVATE void dmon__fsevent_process_events(void)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__gather_recursive	dmon.h	/^_DMON_PRIVATE void dmon__gather_recursive(dmon__watch_state* watch, const char* dirname)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__inotify_event	dmon.h	/^typedef struct dmon__inotify_event {$/;"	s
+dmon__inotify_event	dmon.h	/^} dmon__inotify_event;$/;"	t	typeref:struct:dmon__inotify_event
+dmon__inotify_process_events	dmon.h	/^_DMON_PRIVATE void dmon__inotify_process_events(void)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__isrange	dmon.h	/^_DMON_PRIVATE bool dmon__isrange(char ch, char from, char to)$/;"	f	typeref:typename:_DMON_PRIVATE bool
+dmon__isupperchar	dmon.h	/^_DMON_PRIVATE bool dmon__isupperchar(char ch)$/;"	f	typeref:typename:_DMON_PRIVATE bool
+dmon__make_id	dmon.h	/^#       define dmon__make_id(/;"	d
+dmon__max	dmon.h	/^#   define dmon__max(/;"	d
+dmon__min	dmon.h	/^#   define dmon__min(/;"	d
+dmon__refresh_watch	dmon.h	/^_DMON_PRIVATE bool dmon__refresh_watch(dmon__watch_state* watch)$/;"	f	typeref:typename:_DMON_PRIVATE bool
+dmon__state	dmon.h	/^typedef struct dmon__state {$/;"	s
+dmon__state	dmon.h	/^} dmon__state;$/;"	t	typeref:struct:dmon__state
+dmon__strcat	dmon.h	/^_DMON_PRIVATE char* dmon__strcat(char* dst, int dst_sz, const char* src)$/;"	f	typeref:typename:_DMON_PRIVATE char *
+dmon__strcpy	dmon.h	/^_DMON_PRIVATE char* dmon__strcpy(char* dst, int dst_sz, const char* src)$/;"	f	typeref:typename:_DMON_PRIVATE char *
+dmon__swap	dmon.h	/^#   define dmon__swap(/;"	d
+dmon__thread	dmon.h	/^_DMON_PRIVATE DWORD WINAPI dmon__thread(LPVOID arg)$/;"	f	typeref:typename:_DMON_PRIVATE DWORD WINAPI
+dmon__thread	dmon.h	/^static void* dmon__thread(void* arg)$/;"	f	typeref:typename:void *
+dmon__tolower	dmon.h	/^_DMON_PRIVATE char* dmon__tolower(char* dst, int dst_sz, const char* str)$/;"	f	typeref:typename:_DMON_PRIVATE char *
+dmon__tolowerchar	dmon.h	/^_DMON_PRIVATE char dmon__tolowerchar(char ch)$/;"	f	typeref:typename:_DMON_PRIVATE char
+dmon__unixpath	dmon.h	/^_DMON_PRIVATE char* dmon__unixpath(char* dst, int size, const char* path)$/;"	f	typeref:typename:_DMON_PRIVATE char *
+dmon__unwatch	dmon.h	/^_DMON_PRIVATE void dmon__unwatch(dmon__watch_state* watch)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__watch_cb	dmon.h	/^typedef void (dmon__watch_cb)(dmon_watch_id, dmon_action, const char*, const char*, const char*,/;"	t	typeref:typename:void ()(dmon_watch_id,dmon_action,const char *,const char *,const char *,void *)
+dmon__watch_recursive	dmon.h	/^_DMON_PRIVATE void dmon__watch_recursive(const char* dirname, int fd, uint32_t mask,$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon__watch_state	dmon.h	/^typedef struct dmon__watch_state {$/;"	s
+dmon__watch_state	dmon.h	/^} dmon__watch_state;$/;"	t	typeref:struct:dmon__watch_state
+dmon__watch_subdir	dmon.h	/^typedef struct dmon__watch_subdir {$/;"	s
+dmon__watch_subdir	dmon.h	/^} dmon__watch_subdir;$/;"	t	typeref:struct:dmon__watch_subdir
+dmon__win32_event	dmon.h	/^typedef struct dmon__win32_event {$/;"	s
+dmon__win32_event	dmon.h	/^} dmon__win32_event;$/;"	t	typeref:struct:dmon__win32_event
+dmon__win32_process_events	dmon.h	/^_DMON_PRIVATE void dmon__win32_process_events(void)$/;"	f	typeref:typename:_DMON_PRIVATE void
+dmon_action	dmon.h	/^} dmon_action;$/;"	t	typeref:enum:dmon_action_t
+dmon_action_t	dmon.h	/^typedef enum dmon_action_t {$/;"	g
+dmon_deinit	dmon.h	/^DMON_API_IMPL void dmon_deinit(void)$/;"	f	typeref:typename:DMON_API_IMPL void
+dmon_init	dmon.h	/^DMON_API_IMPL void dmon_init(void)$/;"	f	typeref:typename:DMON_API_IMPL void
+dmon_unwatch	dmon.h	/^DMON_API_IMPL void dmon_unwatch(dmon_watch_id id)$/;"	f	typeref:typename:DMON_API_IMPL void
+dmon_watch	dmon.h	/^DMON_API_IMPL dmon_watch_id dmon_watch(const char* rootdir,$/;"	f	typeref:typename:DMON_API_IMPL dmon_watch_id
+dmon_watch_flags	dmon.h	/^} dmon_watch_flags;$/;"	t	typeref:enum:dmon_watch_flags_t
+dmon_watch_flags_t	dmon.h	/^typedef enum dmon_watch_flags_t {$/;"	g
+dmon_watch_id	dmon.h	/^typedef struct { uint32_t id; } dmon_watch_id;$/;"	t	typeref:struct:__anonf9160ae90108
+dst_max	dmon.h	/^    int dst_max = dst_sz - 1;$/;"	l	function:dmon__tolower	typeref:typename:int	file:
+dt	dmon.h	/^        LONG dt =$/;"	l	function:dmon__thread	typeref:typename:LONG	file:
+dt	dmon.h	/^        long dt = (tm.tv_sec - starttm.tv_sec) * 1000000 + tm.tv_usec - starttm.tv_usec;$/;"	l	function:dmon__thread	typeref:typename:long	file:
+end	parse-usestack.c	/^    char *end;  \/\/ end of string$/;"	m	struct:__anoncb7e71c10108	typeref:typename:char *	file:
+end	parse-usestatic.c	/^    char *end;$/;"	m	struct:__anon3c800cb30108	typeref:typename:char *	file:
+end	str.h	/^    char *end;$/;"	m	struct:__anon106189540108	typeref:typename:char *
+end	strFromFile-useheap.c	/^    char *end;$/;"	m	struct:__anoncda170fb0108	typeref:typename:char *	file:
+end	test-array.c	/^    char *end = t;$/;"	l	function:main	typeref:typename:char *	file:
+entry	dmon.h	/^    struct dirent* entry;$/;"	l	function:dmon__gather_recursive	typeref:struct:dirent *	file:
+entry	dmon.h	/^    struct dirent* entry;$/;"	l	function:dmon__watch_recursive	typeref:struct:dirent *	file:
+entry_valid	dmon.h	/^        bool entry_valid = false;$/;"	l	function:dmon__gather_recursive	typeref:typename:bool	file:
+entry_valid	dmon.h	/^        bool entry_valid = false;$/;"	l	function:dmon__watch_recursive	typeref:typename:bool	file:
+errmsg	read-file.c	/^            char errmsg[100];$/;"	l	function:main	typeref:typename:char[100]	file:
+ev	dmon.h	/^            dmon__fsevent_event ev;$/;"	l	function:dmon__fsevent_callback	typeref:typename:dmon__fsevent_event	file:
+ev	dmon.h	/^        dmon__fsevent_event* ev = &_dmon.events[i];$/;"	l	function:dmon__fsevent_process_events	typeref:typename:dmon__fsevent_event *	file:
+ev	dmon.h	/^        dmon__inotify_event* ev = &_dmon.events[i];$/;"	l	function:dmon__inotify_process_events	typeref:typename:dmon__inotify_event *	file:
+ev	dmon.h	/^        dmon__win32_event* ev = &_dmon.events[i];$/;"	l	function:dmon__win32_process_events	typeref:typename:dmon__win32_event *	file:
+event_flags	dmon.h	/^    long event_flags;$/;"	m	struct:dmon__fsevent_event	typeref:typename:long
+event_id	dmon.h	/^            uint64_t event_id = (uint64_t) event_ids[i];$/;"	l	function:dmon__fsevent_callback	typeref:typename:uint64_t	file:
+event_id	dmon.h	/^    uint64_t event_id;$/;"	m	struct:dmon__fsevent_event	typeref:typename:uint64_t
+events	dmon.h	/^    dmon__fsevent_event* events;$/;"	m	struct:dmon__state	typeref:typename:dmon__fsevent_event *
+events	dmon.h	/^    dmon__inotify_event* events;$/;"	m	struct:dmon__state	typeref:typename:dmon__inotify_event *
+events	dmon.h	/^    dmon__win32_event* events;$/;"	m	struct:dmon__state	typeref:typename:dmon__win32_event *
+f	main.c	/^    FILE *f;$/;"	l	function:File_Reload	typeref:typename:FILE *	file:
+f	parse-usestack.c	/^    FILE *f = fopen(filename, "r");$/;"	l	function:count_chars	typeref:typename:FILE *	file:
+f	parse-usestack.c	/^    FILE *f = fopen(filename, "r");$/;"	l	function:count_lines	typeref:typename:FILE *	file:
+f	parse-usestack.c	/^    FILE *f = fopen(filename, "r");$/;"	l	function:str_ReadFile	typeref:typename:FILE *	file:
+f	parse-usestatic.c	/^    FILE *f = fopen(filename, "r");$/;"	l	function:str_ReadFile	typeref:typename:FILE *	file:
+f	read-file.c	/^    FILE *f = fopen(FILENAME, "r");$/;"	l	function:main	typeref:typename:FILE *	file:
+f	str.h	/^    FILE *f = fopen(filename, "r");$/;"	l	function:str_FromFile	typeref:typename:FILE *	file:
+f	strFromFile-useheap.c	/^    FILE *f = fopen(filename, "r");$/;"	l	function:str_FromFile	typeref:typename:FILE *	file:
+f	test-array.c	/^    FILE *f = fopen("test-array.c", "r");$/;"	l	function:main	typeref:typename:FILE *	file:
+false	bool.h	/^#define false /;"	d
+false	main.c	/^#define false /;"	d	file:
+false	parse-usestack.c	/^#define false /;"	d	file:
+false	parse-usestatic.c	/^#define false /;"	d	file:
+fd	dmon.h	/^    int fd;$/;"	m	struct:dmon__watch_state	typeref:typename:int
+filename	parse-usestack.c	/^    const char *filename = "parse-usestack.c";$/;"	l	function:main	typeref:typename:const char *	file:
+filename	strFromFile-useheap.c	/^    const char* filename = "strFromFile-useheap.c";$/;"	l	function:main	typeref:typename:const char *	file:
+filename	test-comments.c	/^    const char *filename = "testfile-comments.c";$/;"	l	function:main	typeref:typename:const char *	file:
+filename	test-str.c	/^        const char* filename = "test-str.c";$/;"	l	function:main	typeref:typename:const char *	file:
+filepath	dmon.h	/^                            char filepath[DMON_MAX_PATH];$/;"	l	function:dmon__thread	typeref:typename:char[]	file:
+filepath	dmon.h	/^                char filepath[DMON_MAX_PATH];$/;"	l	function:dmon__thread	typeref:typename:char[]	file:
+filepath	dmon.h	/^            const char *filepath = ((const char **) event_paths)[i];$/;"	l	function:dmon__fsevent_callback	typeref:typename:const char *	file:
+filepath	dmon.h	/^    char filepath[DMON_MAX_PATH];$/;"	m	struct:dmon__fsevent_event	typeref:typename:char[]
+filepath	dmon.h	/^    char filepath[DMON_MAX_PATH];$/;"	m	struct:dmon__inotify_event	typeref:typename:char[]
+filepath	dmon.h	/^    char filepath[DMON_MAX_PATH];$/;"	m	struct:dmon__win32_event	typeref:typename:char[]
+flags	dmon.h	/^            long flags = (long) event_flags[i];$/;"	l	function:dmon__fsevent_callback	typeref:typename:long	file:
+fsev_stream_ref	dmon.h	/^    FSEventStreamRef fsev_stream_ref;$/;"	m	struct:dmon__watch_state	typeref:typename:FSEventStreamRef
+g	main.c	/^                u32 r, g, b;$/;"	l	function:Data_Update	typeref:typename:u32	file:
+get_comments_from_src	parse-usestack.c	/^void get_comments_from_src(str *cmt, str *src)$/;"	f	typeref:typename:void
+get_comments_from_src	parse-usestatic.c	/^void get_comments_from_src(str *cmt, str *src)$/;"	f	typeref:typename:void
+get_comments_list	comments.h	/^list* get_comments_list(str *S)$/;"	f	typeref:typename:list *
+get_comments_str	comments.h	/^str* get_comments_str(str *S)$/;"	f	typeref:typename:str *
+get_tags_from_comments	parse-usestack.c	/^void get_tags_from_comments(str *tags, str *cmt)$/;"	f	typeref:typename:void
+get_tags_from_comments	parse-usestatic.c	/^void get_tags_from_comments(str *tags, str *cmt)$/;"	f	typeref:typename:void
+hstart	main.c	/^                    u32 hstart = Data_hstart*SCREEN_W; \/\/ start green and blue well beyond hal/;"	l	function:Data_Update	typeref:typename:u32	file:
+i	dmon.h	/^            int i;$/;"	l	function:dmon__thread	typeref:typename:int	file:
+i	dmon.h	/^        int i;$/;"	l	function:dmon__thread	typeref:typename:int	file:
+i	dmon.h	/^        int i;$/;"	l	function:dmon_deinit	typeref:typename:int	file:
+i	dmon.h	/^        size_t i;$/;"	l	function:dmon__fsevent_callback	typeref:typename:size_t	file:
+i	dmon.h	/^    int i, c;$/;"	l	function:dmon__find_subdir	typeref:typename:int	file:
+i	dmon.h	/^    int i, c;$/;"	l	function:dmon__fsevent_process_events	typeref:typename:int	file:
+i	dmon.h	/^    int i, c;$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+i	dmon.h	/^    int i, c;$/;"	l	function:dmon__win32_process_events	typeref:typename:int	file:
+i	dmon.h	/^    size_t len = strlen(path), i;$/;"	l	function:dmon__unixpath	typeref:typename:size_t	file:
+i	list.h	/^    int i = 1;$/;"	l	function:list_PrintHeadTail	typeref:typename:int	file:
+i	main.c	/^    int i=0;$/;"	l	function:main	typeref:typename:int	file:
+id	dmon.h	/^    dmon_watch_id id;$/;"	m	struct:dmon__watch_state	typeref:typename:dmon_watch_id
+id	dmon.h	/^    uint32_t id = ++_dmon.num_watches;$/;"	l	function:dmon_watch	typeref:typename:uint32_t	file:
+id	dmon.h	/^    uint32_t id;$/;"	m	union:dmon__cast_userdata	typeref:typename:uint32_t
+id	dmon.h	/^typedef struct { uint32_t id; } dmon_watch_id;$/;"	m	struct:__anonf9160ae90108	typeref:typename:uint32_t
+iev	dmon.h	/^                        struct inotify_event* iev = (struct inotify_event*)&buff[offset];$/;"	l	function:dmon__thread	typeref:struct:inotify_event *	file:
+index	dmon.h	/^    int index = id.id - 1;$/;"	l	function:dmon_unwatch	typeref:typename:int	file:
+init	dmon.h	/^    bool init;$/;"	m	struct:dmon__watch_state	typeref:typename:bool
+inotify_mask	dmon.h	/^    uint32_t inotify_mask = IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE | IN_MODIFY;$/;"	l	function:dmon_watch	typeref:typename:uint32_t	file:
+is_comment	comments.h	/^    bool is_comment = false;$/;"	l	function:get_comments_list	typeref:typename:bool	file:
+is_comment	comments.h	/^    bool is_comment = false;$/;"	l	function:get_comments_str	typeref:typename:bool	file:
+is_comment	parse-usestack.c	/^    bool is_comment = false;$/;"	l	function:get_comments_from_src	typeref:typename:bool	file:
+is_comment	parse-usestatic.c	/^    bool is_comment = false;$/;"	l	function:get_comments_from_src	typeref:typename:bool	file:
+is_dir	dmon.h	/^        bool is_dir = false;$/;"	l	function:dmon__gather_recursive	typeref:typename:bool	file:
+is_head	comments.h	/^    bool is_head = true;$/;"	l	function:get_comments_list	typeref:typename:bool	file:
+is_multiline	comments.h	/^    bool is_multiline = false;$/;"	l	function:get_comments_list	typeref:typename:bool	file:
+is_multiline	comments.h	/^    bool is_multiline = false;$/;"	l	function:get_comments_str	typeref:typename:bool	file:
+is_multiline	parse-usestack.c	/^    bool is_multiline = false;$/;"	l	function:get_comments_from_src	typeref:typename:bool	file:
+is_multiline	parse-usestatic.c	/^    bool is_multiline = false;$/;"	l	function:get_comments_from_src	typeref:typename:bool	file:
+is_tag	parse-usestack.c	/^    bool is_tag = false;$/;"	l	function:get_tags_from_comments	typeref:typename:bool	file:
+is_tag	parse-usestatic.c	/^    bool is_tag = false;$/;"	l	function:get_tags_from_comments	typeref:typename:bool	file:
+item	list.h	/^    str *item;$/;"	m	struct:list	typeref:typename:str *
+j	dmon.h	/^            int j;$/;"	l	function:dmon__fsevent_process_events	typeref:typename:int	file:
+j	dmon.h	/^            int j;$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+j	dmon.h	/^            int j;$/;"	l	function:dmon__win32_process_events	typeref:typename:int	file:
+k	dmon.h	/^                    int k;$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+l1	dmon.h	/^                    int l1 = (int)strlen(ev->filepath);$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+l2	dmon.h	/^                    int l2 = (int)strlen(check_ev->filepath);$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+len	dmon.h	/^                    ssize_t len = read(watch->fd, buff, _DMON_TEMP_BUFFSIZE);$/;"	l	function:dmon__thread	typeref:typename:ssize_t	file:
+len	dmon.h	/^    const int32_t len = (int32_t)strlen(src);$/;"	l	function:dmon__strcpy	typeref:typename:const int32_t	file:
+len	dmon.h	/^    int len = (int)strlen(dst);$/;"	l	function:dmon__strcat	typeref:typename:int	file:
+len	dmon.h	/^    size_t len = strlen(path), i;$/;"	l	function:dmon__unixpath	typeref:typename:size_t	file:
+len	list.h	/^    int len = list_Len(L);$/;"	l	function:list_PrintHeadTail	typeref:typename:int	file:
+len	parse-usestack.c	/^    int len;$/;"	m	struct:__anoncb7e71c10108	typeref:typename:int	file:
+linkpath	dmon.h	/^            char linkpath[PATH_MAX];$/;"	l	function:dmon__watch_recursive	typeref:typename:char[]	file:
+linkpath	dmon.h	/^            char linkpath[PATH_MAX];$/;"	l	function:dmon_watch	typeref:typename:char[]	file:
+list	list.h	/^typedef struct list$/;"	s
+list	list.h	/^} list;$/;"	t	typeref:struct:list
+list_Free	list.h	/^void list_Free(list *ListStr)$/;"	f	typeref:typename:void
+list_Len	list.h	/^int list_Len(list *L)$/;"	f	typeref:typename:int
+list_New	list.h	/^list* list_New(void)$/;"	f	typeref:typename:list *
+list_Print	list.h	/^void list_Print(list *L)$/;"	f	typeref:typename:void
+list_PrintHeadTail	list.h	/^void list_PrintHeadTail(list *L, int h, int t)$/;"	f	typeref:typename:void
+loop_break	dmon.h	/^            bool loop_break = false;$/;"	l	function:dmon__inotify_process_events	typeref:typename:bool	file:
+m	dmon.h	/^    int m = dbl_cur > min_needed ? dbl_cur : min_needed;$/;"	l	function:stb__sbgrowf	typeref:typename:int	file:
+m	main.c	/^        for (u32 m=0; m < SCREEN_H; m++) {$/;"	l	function:Data_Update	typeref:typename:u32	file:
+main	free-ptr.c	/^int main()$/;"	f	typeref:typename:int
 main	main.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	parse-usestack.c	/^int main()$/;"	f	typeref:typename:int
+main	parse-usestatic.c	/^int main()$/;"	f	typeref:typename:int
+main	parse.c	/^int main()$/;"	f	typeref:typename:int
+main	printf.c	/^int main()$/;"	f	typeref:typename:int
+main	read-file.c	/^int main()$/;"	f	typeref:typename:int
+main	strFromFile-useheap.c	/^int main()$/;"	f	typeref:typename:int
+main	test-array.c	/^int main()$/;"	f	typeref:typename:int
+main	test-comments.c	/^int main()$/;"	f	typeref:typename:int
+main	test-str.c	/^int main()$/;"	f	typeref:typename:int
+main	win-size.c	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+mask	dmon.h	/^                    uint32_t mask = IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE | IN_MOD/;"	l	function:dmon__inotify_process_events	typeref:typename:uint32_t	file:
+mask	dmon.h	/^    uint32_t mask;$/;"	m	struct:dmon__inotify_event	typeref:typename:uint32_t
+min_needed	dmon.h	/^    int min_needed = stb_sb_count(arr) + increment;$/;"	l	function:stb__sbgrowf	typeref:typename:int	file:
+mode	win-size.c	/^    SDL_DisplayMode mode;$/;"	l	function:main	typeref:typename:SDL_DisplayMode	file:
+modify_watches	dmon.h	/^    volatile LONG modify_watches;$/;"	m	struct:dmon__state	typeref:typename:volatile LONG
+modify_watches	dmon.h	/^    volatile int modify_watches;$/;"	m	struct:dmon__state	typeref:typename:volatile int
+move_valid	dmon.h	/^            bool move_valid = false;$/;"	l	function:dmon__inotify_process_events	typeref:typename:bool	file:
+move_valid	dmon.h	/^    bool move_valid;$/;"	m	struct:dmon__fsevent_event	typeref:typename:bool
+msecs_elapsed	dmon.h	/^    uint64_t msecs_elapsed = 0;$/;"	l	function:dmon__thread	typeref:typename:uint64_t	file:
+mutex	dmon.h	/^    CRITICAL_SECTION mutex;$/;"	m	struct:dmon__state	typeref:typename:CRITICAL_SECTION
+mutex	dmon.h	/^    pthread_mutex_t mutex;$/;"	m	struct:dmon__state	typeref:typename:pthread_mutex_t
+n	list.h	/^    int n = 0;$/;"	l	function:list_Len	typeref:typename:int	file:
+n	main.c	/^            for (u32 n=0; n < SCREEN_W; n++) {$/;"	l	function:Data_Update	typeref:typename:u32	file:
+nc	parse-usestack.c	/^    int nc = 0;$/;"	l	function:count_chars	typeref:typename:int	file:
+nc	parse-usestatic.c	/^    int nc = 0; \/\/ number of characters read so far$/;"	l	function:str_ReadFile	typeref:typename:int	file:
+nc	str.h	/^    int nc = sizeof(string) - sizeof(char);$/;"	l	function:str_FromString	typeref:typename:int	file:
+nc	str.h	/^    int nc=0;$/;"	l	function:str_FromFile	typeref:typename:int	file:
+nc	strFromFile-useheap.c	/^    int nc=0;$/;"	l	function:str_FromFile	typeref:typename:int	file:
+nc	test-array.c	/^    int nc = 0;$/;"	l	function:main	typeref:typename:int	file:
+newdir	dmon.h	/^    char newdir[DMON_MAX_PATH];$/;"	l	function:dmon__gather_recursive	typeref:typename:char[]	file:
+next	list.h	/^    struct list *next;$/;"	m	struct:list	typeref:struct:list *
+nl	parse-usestack.c	/^    int nl = 0;$/;"	l	function:count_lines	typeref:typename:int	file:
+nl	parse-usestatic.c	/^    int nl = 0; \/\/ number of line breaks$/;"	l	function:str_ReadFile	typeref:typename:int	file:
+notify	dmon.h	/^                PFILE_NOTIFY_INFORMATION notify;$/;"	l	function:dmon__thread	typeref:typename:PFILE_NOTIFY_INFORMATION	file:
+notify_filter	dmon.h	/^    DWORD notify_filter;$/;"	m	struct:dmon__watch_state	typeref:typename:DWORD
+num	dmon.h	/^    const int32_t num = (len < _max ? len : _max);$/;"	l	function:dmon__strcpy	typeref:typename:const int32_t	file:
+num_watches	dmon.h	/^    int num_watches;$/;"	m	struct:dmon__state	typeref:typename:int
+offset	dmon.h	/^                    ssize_t offset = 0;$/;"	l	function:dmon__thread	typeref:typename:ssize_t	file:
+offset	dmon.h	/^                size_t offset = 0;$/;"	l	function:dmon__thread	typeref:typename:size_t	file:
+offset	dmon.h	/^    int offset = 0;$/;"	l	function:dmon__tolower	typeref:typename:int	file:
+old_filepath	dmon.h	/^    char old_filepath[DMON_MAX_PATH];$/;"	m	struct:dmon__watch_state	typeref:typename:char[]
+overlapped	dmon.h	/^    OVERLAPPED overlapped;$/;"	m	struct:dmon__watch_state	typeref:typename:OVERLAPPED
+p	dmon.h	/^    int *p = (int *) DMON_REALLOC(arr ? stb__sbraw(arr) : 0, itemsize * m + sizeof(int)*2);$/;"	l	function:stb__sbgrowf	typeref:typename:int *	file:
+print	printf.c	/^void print(const char *s)$/;"	f	typeref:typename:void
+ptr	dmon.h	/^    void* ptr;$/;"	m	union:dmon__cast_userdata	typeref:typename:void *
+quit	dmon.h	/^    bool quit;$/;"	m	struct:dmon__state	typeref:typename:bool
+quit	main.c	/^    bool quit = false;$/;"	l	function:main	typeref:typename:bool	file:
+r	dmon.h	/^            char* r = realpath(rootdir, linkpath);$/;"	l	function:dmon_watch	typeref:typename:char *	file:
+r	dmon.h	/^            char* r = realpath(watchdir, linkpath);$/;"	l	function:dmon__watch_recursive	typeref:typename:char *	file:
+r	dmon.h	/^    int r = pthread_create(&_dmon.thread_handle, NULL, dmon__thread, NULL);$/;"	l	function:dmon_init	typeref:typename:int	file:
+r	main.c	/^                u32 r, g, b;$/;"	l	function:Data_Update	typeref:typename:u32	file:
+rawpix	main.c	/^u32 rawpix[SCREEN_W*SCREEN_H*sizeof(u32)];$/;"	v	typeref:typename:u32[]
+rem	dmon.h	/^    struct timespec rem = { 0, 0 };$/;"	l	function:dmon__thread	typeref:struct:timespec	file:
+ren	main.c	/^    SDL_Renderer *ren = SDL_CreateRenderer(win, -1, ren_flags);$/;"	l	function:main	typeref:typename:SDL_Renderer *	file:
+ren_flags	main.c	/^    SDL_RendererFlags ren_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;$/;"	l	function:main	typeref:typename:SDL_RendererFlags	file:
+req	dmon.h	/^    struct timespec req = { (time_t)10 \/ 1000, (long)(10 * 1000000) };$/;"	l	function:dmon__thread	typeref:struct:timespec	file:
+rfds	dmon.h	/^        fd_set rfds;$/;"	l	function:dmon__thread	typeref:typename:fd_set	file:
+root_st	dmon.h	/^                struct stat root_st;$/;"	l	function:dmon__fsevent_process_events	typeref:struct:stat	file:
+root_st	dmon.h	/^    struct stat root_st;$/;"	l	function:dmon_watch	typeref:struct:stat	file:
+rootdir	dmon.h	/^    char rootdir[DMON_MAX_PATH];$/;"	m	struct:dmon__watch_state	typeref:typename:char[]
+rootdir	dmon.h	/^    char rootdir[DMON_MAX_PATH];$/;"	m	struct:dmon__watch_subdir	typeref:typename:char[]
+rootdir_abspath	dmon.h	/^        char rootdir_abspath[DMON_MAX_PATH];$/;"	l	function:dmon_watch	typeref:typename:char[]	file:
+rootdir_len	dmon.h	/^    int rootdir_len = (int)strlen(watch->rootdir);$/;"	l	function:dmon_watch	typeref:typename:int	file:
+rootdir_len	dmon.h	/^    size_t rootdir_len = strlen(watch->rootdir);$/;"	l	function:dmon_watch	typeref:typename:size_t	file:
+rootdir_unmod	dmon.h	/^    char rootdir_unmod[DMON_MAX_PATH];$/;"	m	struct:dmon__watch_state	typeref:typename:char[]
+sdlk_key	main.c	/^                    SDL_Keycode sdlk_key = ui.key.keysym.sym;$/;"	l	function:main	typeref:typename:SDL_Keycode	file:
+skip	dmon.h	/^    bool skip;$/;"	m	struct:dmon__fsevent_event	typeref:typename:bool
+skip	dmon.h	/^    bool skip;$/;"	m	struct:dmon__inotify_event	typeref:typename:bool
+skip	dmon.h	/^    bool skip;$/;"	m	struct:dmon__win32_event	typeref:typename:bool
+src	parse-usestatic.c	/^    str src;$/;"	l	function:main	typeref:typename:str	file:
+starttm	dmon.h	/^    SYSTEMTIME starttm;$/;"	l	function:dmon__thread	typeref:typename:SYSTEMTIME	file:
+starttm	dmon.h	/^    struct timeval starttm;$/;"	l	function:dmon__thread	typeref:struct:timeval	file:
+stb__sbgrow	dmon.h	/^#define stb__sbgrow(/;"	d
+stb__sbgrowf	dmon.h	/^static void * stb__sbgrowf(void *arr, int increment, int itemsize)$/;"	f	typeref:typename:void *
+stb__sbm	dmon.h	/^#define stb__sbm(/;"	d
+stb__sbmaybegrow	dmon.h	/^#define stb__sbmaybegrow(/;"	d
+stb__sbn	dmon.h	/^#define stb__sbn(/;"	d
+stb__sbneedgrow	dmon.h	/^#define stb__sbneedgrow(/;"	d
+stb__sbraw	dmon.h	/^#define stb__sbraw(/;"	d
+stb_sb_add	dmon.h	/^#define stb_sb_add(/;"	d
+stb_sb_count	dmon.h	/^#define stb_sb_count(/;"	d
+stb_sb_free	dmon.h	/^#define stb_sb_free(/;"	d
+stb_sb_last	dmon.h	/^#define stb_sb_last(/;"	d
+stb_sb_pop	dmon.h	/^#define stb_sb_pop(/;"	d
+stb_sb_push	dmon.h	/^#define stb_sb_push(/;"	d
+stb_sb_reset	dmon.h	/^#define stb_sb_reset(/;"	d
+str	parse-usestack.c	/^} str;$/;"	t	typeref:struct:__anoncb7e71c10108	file:
+str	parse-usestatic.c	/^} str;$/;"	t	typeref:struct:__anon3c800cb30108	file:
+str	str.h	/^} str;$/;"	t	typeref:struct:__anon106189540108
+str	strFromFile-useheap.c	/^} str;$/;"	t	typeref:struct:__anoncda170fb0108	file:
+str_Free	str.h	/^void str_Free(str **S)$/;"	f	typeref:typename:void
+str_FromFile	str.h	/^str* str_FromFile(const char *filename)$/;"	f	typeref:typename:str *
+str_FromFile	strFromFile-useheap.c	/^str* str_FromFile(const char *filename)$/;"	f	typeref:typename:str *
+str_FromString	str.h	/^str* str_FromString(const char *string)$/;"	f	typeref:typename:str *
+str_IsValid	str.h	/^bool str_IsValid(str *S)$/;"	f	typeref:typename:bool
+str_Len	str.h	/^long long int str_Len(str *S)$/;"	f	typeref:typename:long long int
+str_New	str.h	/^str* str_New(int nc)$/;"	f	typeref:typename:str *
+str_Print	parse-usestack.c	/^void str_Print(str *s)$/;"	f	typeref:typename:void
+str_Print	parse-usestatic.c	/^void str_Print(str *s)$/;"	f	typeref:typename:void
+str_Print	str.h	/^void str_Print(str *S)$/;"	f	typeref:typename:void
+str_ReadFile	parse-usestack.c	/^void str_ReadFile(str *src, const char * filename)$/;"	f	typeref:typename:void
+str_ReadFile	parse-usestatic.c	/^void str_ReadFile(str *src, const char * filename)$/;"	f	typeref:typename:void
+subdir	dmon.h	/^                        const char *subdir = dmon__find_subdir(watch, iev->wd);$/;"	l	function:dmon__thread	typeref:typename:const char *	file:
+subdir	dmon.h	/^                    dmon__watch_subdir subdir;$/;"	l	function:dmon__inotify_process_events	typeref:typename:dmon__watch_subdir	file:
+subdir	dmon.h	/^            dmon__watch_subdir subdir;$/;"	l	function:dmon__gather_recursive	typeref:typename:dmon__watch_subdir	file:
+subdir	dmon.h	/^            dmon__watch_subdir subdir;$/;"	l	function:dmon__watch_recursive	typeref:typename:dmon__watch_subdir	file:
+subdir	dmon.h	/^    dmon__watch_subdir subdir;$/;"	l	function:dmon_watch	typeref:typename:dmon__watch_subdir	file:
+subdirs	dmon.h	/^    dmon__watch_subdir* subdirs;$/;"	m	struct:dmon__watch_state	typeref:typename:dmon__watch_subdir *
+t	comments.h	/^                list *t = list_New();$/;"	l	function:get_comments_list	typeref:typename:list *	file:
+t	list.h	/^        list *t = ListStr;$/;"	l	function:list_Free	typeref:typename:list *	file:
+t	test-array.c	/^    char *t = txt;$/;"	l	function:main	typeref:typename:char *	file:
+tags	parse-usestatic.c	/^    str tags;$/;"	l	function:main	typeref:typename:str	file:
+test_str_is_valid	test-str.c	/^bool test_str_is_valid = false;$/;"	v	typeref:typename:bool
+tex	main.c	/^    SDL_Texture *tex = SDL_CreateTexture(ren,$/;"	l	function:main	typeref:typename:SDL_Texture *	file:
+third_ev	dmon.h	/^                        dmon__inotify_event* third_ev = &_dmon.events[k];$/;"	l	function:dmon__inotify_process_events	typeref:typename:dmon__inotify_event *	file:
+thread_handle	dmon.h	/^    HANDLE thread_handle;$/;"	m	struct:dmon__state	typeref:typename:HANDLE
+thread_handle	dmon.h	/^    pthread_t thread_handle;$/;"	m	struct:dmon__state	typeref:typename:pthread_t
+thread_sem	dmon.h	/^    dispatch_semaphore_t thread_sem;$/;"	m	struct:dmon__state	typeref:typename:dispatch_semaphore_t
+timeout	dmon.h	/^    struct timeval timeout;$/;"	l	function:dmon__thread	typeref:struct:timeval	file:
+tm	dmon.h	/^        SYSTEMTIME tm;$/;"	l	function:dmon__thread	typeref:typename:SYSTEMTIME	file:
+tm	dmon.h	/^        struct timeval tm;$/;"	l	function:dmon__thread	typeref:struct:timeval	file:
+true	bool.h	/^#define true /;"	d
+true	main.c	/^#define true /;"	d	file:
+true	parse-usestack.c	/^#define true /;"	d	file:
+true	parse-usestatic.c	/^#define true /;"	d	file:
+txt	free-ptr.c	/^    char *txt;$/;"	m	struct:__anonb7255dbb0108	typeref:typename:char *	file:
+txt	parse-usestack.c	/^    char *txt;  \/\/ start of string$/;"	m	struct:__anoncb7e71c10108	typeref:typename:char *	file:
+txt	parse-usestatic.c	/^    char txt[MAXLEN];$/;"	m	struct:__anon3c800cb30108	typeref:typename:char[]	file:
+txt	read-file.c	/^    char txt[MAX_LINELEN]; \/\/ store a line of text$/;"	l	function:main	typeref:typename:char[]	file:
+txt	str.h	/^    char *txt; \/\/ OK for printf: printf("%s", str->txt)$/;"	m	struct:__anon106189540108	typeref:typename:char *
+txt	strFromFile-useheap.c	/^    char *txt; \/\/ OK for printf: printf("%s", str->txt)$/;"	m	struct:__anoncda170fb0108	typeref:typename:char *	file:
+txt	test-array.c	/^    char txt[nc];$/;"	l	function:main	typeref:typename:char[]	file:
+u32	main.c	/^typedef uint32_t u32;$/;"	t	typeref:typename:uint32_t	file:
+u8	main.c	/^typedef u8 bool;$/;"	t	typeref:typename:bool	file:
+u8	main.c	/^typedef uint8_t u8;$/;"	t	typeref:typename:uint8_t	file:
+ui	main.c	/^        SDL_Event ui;$/;"	l	function:main	typeref:typename:SDL_Event	file:
+usecs_elapsed	dmon.h	/^    uint64_t usecs_elapsed = 0;$/;"	l	function:dmon__thread	typeref:typename:uint64_t	file:
+user_data	dmon.h	/^    void* user_data;$/;"	m	struct:dmon__watch_state	typeref:typename:void *
+userdata	dmon.h	/^    union dmon__cast_userdata userdata;$/;"	l	function:dmon_watch	typeref:union:dmon__cast_userdata	file:
+vstart	main.c	/^                    u32 vstart = 2*SCREEN_H; \/\/ start red beyond half-brightness$/;"	l	function:Data_Update	typeref:typename:u32	file:
+wait_handles	dmon.h	/^    HANDLE wait_handles[DMON_MAX_WATCHES];$/;"	l	function:dmon__thread	typeref:typename:HANDLE[]	file:
+wait_result	dmon.h	/^        DWORD wait_result = WaitForMultipleObjects(_dmon.num_watches, wait_handles, FALSE, 10);$/;"	l	function:dmon__thread	typeref:typename:DWORD	file:
+watch	dmon.h	/^                dmon__watch_state* watch = &_dmon.watches[ev->watch_id.id-1];$/;"	l	function:dmon__fsevent_process_events	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^                dmon__watch_state* watch = &_dmon.watches[i];$/;"	l	function:dmon__thread	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^            dmon__watch_state* watch = &_dmon.watches[i];$/;"	l	function:dmon__thread	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^            dmon__watch_state* watch = &_dmon.watches[wait_result - WAIT_OBJECT_0];$/;"	l	function:dmon__thread	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^        dmon__watch_state* watch = &_dmon.watches[ev->watch_id.id - 1];$/;"	l	function:dmon__fsevent_process_events	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^        dmon__watch_state* watch = &_dmon.watches[ev->watch_id.id - 1];$/;"	l	function:dmon__inotify_process_events	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^        dmon__watch_state* watch = &_dmon.watches[ev->watch_id.id - 1];$/;"	l	function:dmon__win32_process_events	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^    dmon__watch_state* watch = &_dmon.watches[id - 1];$/;"	l	function:dmon_watch	typeref:typename:dmon__watch_state *	file:
+watch	dmon.h	/^    dmon__watch_state* watch = &_dmon.watches[watch_id.id - 1];$/;"	l	function:dmon__fsevent_callback	typeref:typename:dmon__watch_state *	file:
+watch_cb	dmon.h	/^    dmon__watch_cb* watch_cb;$/;"	m	struct:dmon__watch_state	typeref:typename:dmon__watch_cb *
+watch_flags	dmon.h	/^    uint32_t watch_flags;$/;"	m	struct:dmon__watch_state	typeref:typename:uint32_t
+watch_id	dmon.h	/^    dmon_watch_id watch_id = dmon__make_id(_userdata.id);$/;"	l	function:dmon__fsevent_callback	typeref:typename:dmon_watch_id	file:
+watch_id	dmon.h	/^    dmon_watch_id watch_id;$/;"	m	struct:dmon__fsevent_event	typeref:typename:dmon_watch_id
+watch_id	dmon.h	/^    dmon_watch_id watch_id;$/;"	m	struct:dmon__inotify_event	typeref:typename:dmon_watch_id
+watch_id	dmon.h	/^    dmon_watch_id watch_id;$/;"	m	struct:dmon__win32_event	typeref:typename:dmon_watch_id
+watchdir	dmon.h	/^                    char watchdir[DMON_MAX_PATH];$/;"	l	function:dmon__inotify_process_events	typeref:typename:char[]	file:
+watchdir	dmon.h	/^    char watchdir[DMON_MAX_PATH];$/;"	l	function:dmon__watch_recursive	typeref:typename:char[]	file:
+watchdir_len	dmon.h	/^            int watchdir_len = (int)strlen(watchdir);$/;"	l	function:dmon__watch_recursive	typeref:typename:int	file:
+watches	dmon.h	/^    dmon__watch_state watches[DMON_MAX_WATCHES];$/;"	m	struct:dmon__state	typeref:typename:dmon__watch_state[]
+wd	dmon.h	/^                    int wd = inotify_add_watch(watch->fd, watchdir, mask);$/;"	l	function:dmon__inotify_process_events	typeref:typename:int	file:
+wd	dmon.h	/^            int wd = inotify_add_watch(fd, watchdir, mask);$/;"	l	function:dmon__watch_recursive	typeref:typename:int	file:
+wd	dmon.h	/^    int wd = inotify_add_watch(watch->fd, watch->rootdir, inotify_mask);$/;"	l	function:dmon_watch	typeref:typename:int	file:
+wds	dmon.h	/^    const int* wds = watch->wds;$/;"	l	function:dmon__find_subdir	typeref:typename:const int *	file:
+wds	dmon.h	/^    int* wds;$/;"	m	struct:dmon__watch_state	typeref:typename:int *
+wev	dmon.h	/^                    dmon__win32_event wev = { { 0 }, notify->Action, watch->id, false };$/;"	l	function:dmon__thread	typeref:typename:dmon__win32_event	file:
+win	main.c	/^    SDL_Window *win = SDL_CreateWindow("BOB", Window_x, Window_y, Window_w, Window_h, win_flags)/;"	l	function:main	typeref:typename:SDL_Window *	file:
+win_flags	main.c	/^    SDL_WindowFlags win_flags = SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP;$/;"	l	function:main	typeref:typename:SDL_WindowFlags	file:
